@@ -16,3 +16,10 @@
     font-weight: 400;
     font-style: normal;
   }
+
+  .button--unstyled {
+    padding: 0;
+    border: 0;
+    background: none;
+    box-shadow: none;
+  }

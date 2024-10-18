@@ -1,0 +1,84 @@
+.imagemproduto{
+    width: 730px;
+    height: 460px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow:  0px 10px 15px ;
+}
+
+.produtogrid {
+    background-color: #50645c;
+    padding:20px;
+    display:flex;
+    justify-content: space-evenly;
+}
+.produtoinfo{
+    display: flex;
+    justify-content: start;
+    width: 390px;
+    height: 460px;
+    background-color: white;
+    font-family: Inter;
+    padding: 10px;
+    flex-direction: column;
+    font-size: 14.5px;
+    box-shadow:  0px 10px 15px ;
+}
+
+
+.price{
+    margin-top: 20px;
+}
+.av{
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-top: 20px;
+}
+.av p{
+   font-weight: normal; 
+}
+.size{
+    display: flex;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.est{
+    margin-top: 20px;
+}
+
+.bd{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 10px;
+    align-items: center;
+}
+
+.addtocart {
+    width: 350px;
+    background-color: white;
+    color: #030A8C;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 7px;
+    border: #030A8C solid 3px;
+    user-select: none;
+    transition: background-color 0.3s; 
+    height: 80px;
+    align-items: center ;
+}
+
+.addtocart:hover {
+    background-color: #030A8C;
+    color: white;
+    cursor: pointer;
+}
+body{
+    background-color: #50645c;
+}
