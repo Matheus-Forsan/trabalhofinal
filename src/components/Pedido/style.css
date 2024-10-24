@@ -1,0 +1,28 @@
+.pedido {
+    font-family: Inter;
+    background-color: #77997E;
+    width: 830px;
+    height: auto;
+    padding: 20px;
+}
+
+.pd1{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.l1{
+    height: 1px;
+  background-color: rgb(0, 0, 0);
+  border: none;
+  margin-top: 7px;
+}
+
+.pd2{
+    display: flex;
+    margin:20px;
+    align-items: baseline;
+    gap: 4px;
+}

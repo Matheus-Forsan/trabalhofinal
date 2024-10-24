@@ -1,0 +1,26 @@
+.histgrid {
+    width: 940px;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    flex-direction: column;
+    gap: 30px;
+    margin:30px
+}
+
+.hist {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hist h1{
+    font-family: Inter;
+    font-style:  italic;
+    margin-bottom: 30px;
+    color: white;
+}
+

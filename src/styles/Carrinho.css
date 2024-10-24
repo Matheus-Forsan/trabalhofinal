@@ -1,0 +1,63 @@
+.Carrinho {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Cargrid{
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.carprod{
+    width: 1000px;
+    height: 200px;
+    background-color: #77997E   ;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: Inter;
+    padding: 20px;
+}
+
+.carimg{
+    width: 222px;
+    height: 178px;
+    background-color: black;
+}
+
+.carprod input{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: larger;
+}
+
+.finalizar {
+    background-color: aliceblue;
+    width: 1000px;
+    margin-bottom: 50px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    font-family: Inter;
+
+}
+
+.fin1{
+    display: flex;
+    gap:10px;
+}
+
+.fin2{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
