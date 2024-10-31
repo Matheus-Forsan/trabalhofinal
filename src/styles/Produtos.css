@@ -1,0 +1,19 @@
+.producticon {
+    width: 280px;
+    height: 300px;
+    background-color: white;
+    margin: 20px;
+}
+
+.productcontainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.productgrid{
+    width: 1300px;
+    display: flex;
+    flex-wrap: wrap;
+}

@@ -11,6 +11,7 @@ import Produtos from "./pages/Produtos";
 import Vendas from "./pages/Vendas";
 import Usuarios from "./pages/Usuarios";
 import DetalhesVenda from "./pages/DetalhesVendas";
+import Cadastro from "./pages/Cadastro"
 
 export default function AppRoutes() {
   return (
@@ -18,8 +19,10 @@ export default function AppRoutes() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/detalhes" element={<DetalhesProduto />} />
+        <Route path="/produtos" element={<Produtos />} />
         <Route path="/login" element={<Login />} />
         <Route path="/registro" element={<Registro />} />
+        <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/produto/:id" element={<DetalhesProduto />} />
         <Route path="/carrinho" element={<Carrinho />} />
         <Route path="/historico-compras" element={<HistoricoCompras />} />
