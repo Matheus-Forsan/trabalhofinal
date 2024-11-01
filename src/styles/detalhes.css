@@ -83,3 +83,41 @@ body{
     background-color: #50645c;
 }
 
+@media only screen and (max-width: 600px){
+    .imagemproduto{
+        width: 400px;
+        height: 250px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow:  0px 10px 15px ;
+    }
+    .produtogrid {
+        background-color: #50645c;
+        padding:px;
+        display:flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+   
+    .produtoinfo{
+        margin-top: 20px;
+        display: flex;
+        justify-content: start;
+        width: 400pxpx;
+        height: 460px;
+        background-color: white;
+        font-family: Inter;
+        padding: 10px;
+        flex-direction: column;
+        font-size: 14.5px;
+        box-shadow:  0px 10px 15px ;
+    }
+    .addtocart:active {
+        background-color: #030A8C;
+        color: white;
+        cursor: pointer;
+    }
+}

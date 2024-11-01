@@ -17,6 +17,7 @@ import { MdEmail } from "react-icons/md";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { AiFillInstagram } from "react-icons/ai";
+import banner from "../assets/images/logo_nova.png"
 
 
 import "../styles/home.css";
@@ -26,36 +27,36 @@ export default function Home() {
     <div className="maincontainer">
       <Cabecalho />
       <div className="banner">
-        <div className="banner1"/>
+        <img src={banner} className="banner"/>
       </div>
       <main>
           <div className="categoriagrid">
             <div className="categorias">
-              <img src={legging}  />
+              <img src={legging}  className="catimg"/>
             </div>
             <div className="categorias">
-              <img src={camisa}  />
+              <img src={camisa}  className="catimg"/>
             </div>
             <div className="categorias">
-              <img src={academia1}  />
+              <img src={academia1}  className="catimg"/>
             </div>
             <div className="categorias">
-              <img src={short}  />
+              <img src={short}  className="catimg"/>
             </div>
             <div className="categorias">
-              <img src={jaqueta}  />
+              <img src={jaqueta}  className="catimg"/>
             </div>
             <div className="categorias">
-              <img src={dumbbell}  />
+              <img src={dumbbell}  className="catimg"/>
             </div>
           </div>
           <div className="losfavoritos">
             <h1>OS FAVORITOS</h1>
             <div className="favgrid">
-              <div><img src={topbranco} /></div>
-              <div><img src={sf}/></div>
-              <div><img src={b2}/></div>
-              <div><img src={cvb}/></div>
+              <div><img src={topbranco} className="populares"/></div>
+              <div><img src={sf} className="populares"/></div>
+              <div><img src={b2} className="populares"/></div>
+              <div><img src={cvb} className="populares"/></div>
             </div>
           </div>
           <div className="about">
@@ -68,21 +69,21 @@ export default function Home() {
           <div className="OpnioesGrid">
             <div className="opniao">
               <div className="foto">
-                  <img src={paula} />
+                  <img src={paula} className="foto1"/>
               </div>
               <h3>Paula, 23 anos.</h3>
               <p>"Descobri a loja por acaso e, desde a primeira compra, me apaixonei! As leggings são super confortáveis e não deslizam durante o treino. Além disso, o design é lindo! Me sinto mais confiante na academia e sempre recebo elogios. Recomendo a todos!"</p>
             </div>
             <div className="opniao">
               <div className="foto">
-                  <img src={lucas} />
+                  <img src={lucas} className="foto1"/>
               </div>
               <h3>Lucas, 32 anos.</h3>
               <p>"Como alguém que treina intensamente, sempre busco roupas que aguentem o tranco. As camisetas da loja são incríveis! O tecido respira bem e seca rapidinho. Além disso, o atendimento foi excelente e me ajudaram a escolher o tamanho perfeito. Com certeza voltarei!"</p>
             </div>
             <div className="opniao">
               <div className="foto">
-                  <img src={paula} />
+                  <img src={paula} className="foto1"/>
               </div>
               <h3>Sofia, 25 anos</h3>
               <p>"Estou amando minhas novas roupas de treino! Comprei um conjunto e, desde então, não quero usar outra coisa. As cores são vibrantes e as peças se ajustam super bem ao corpo. É ótimo ver uma loja que entende a importância de se sentir bem enquanto se exercita!"</p>

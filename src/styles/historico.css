@@ -5,7 +5,7 @@
     height: auto;
     flex-direction: column;
     gap: 30px;
-    margin:30px
+    margin: 30px;
 }
 
 .hist {
@@ -17,10 +17,24 @@
     align-items: center;
 }
 
-.hist h1{
+.hist h1 {
     font-family: Inter;
-    font-style:  italic;
+    font-style: italic;
     margin-bottom: 30px;
     color: white;
 }
 
+.trashicon1{
+    font-size: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+    .histgrid {
+        width: 400px; 
+        gap: 20px;
+        align-items: center; 
+    }
+    .hist {
+        font-size: 9px; 
+    }
+}

@@ -48,7 +48,7 @@ export default function Registro() {
             <p>Crie uma senha</p>
             <input type="text"></input>
           </div>
-          <button>Entrar</button>
+          <button>Cadastrar</button>
           
         </div>
       </div>

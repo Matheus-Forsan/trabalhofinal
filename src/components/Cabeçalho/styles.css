@@ -1,6 +1,6 @@
 .headerbar {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     background-color:  #789c7c;
     width: 100%;
     height: 80px;
@@ -52,4 +52,62 @@
         margin-bottom: 20px;
     }
 
-    
+
+    .carticon{
+        font-size: 55px;
+    }
+    .menuicon{
+        font-size: 35px;
+    }
+    .searchicon{
+        font-size: 35px;
+    }
+    .usericon{
+        font-size: 30px;
+    }
+
+    @media only screen and (max-width: 600px) {
+       
+        .carticon{
+            font-size: 35px;
+        }
+        .menuicon{
+            font-size: 25px;
+        }
+        .searchicon{
+            font-size: 95px;
+        }
+        .usericon{
+            font-size: 25px;
+        }
+
+        .search{
+            display: flex;
+            background-color: #F5F5DC;
+            height: 40px;
+            width: 200px;
+            border-radius: 10px;
+            justify-content: start;
+            align-items: center;
+            overflow: hidden;
+        }
+        .headerbar h1{
+            font-size: 15px;
+        }
+        .content{
+            display: flex;
+            flex-direction: row;
+            gap: 1px;
+            width:100px;
+            justify-content: space-around;
+        }
+        .content1{
+            width: 4px;
+            font-family: Inter;
+            font-size: 10px;
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            align-items: center;
+        }
+    }

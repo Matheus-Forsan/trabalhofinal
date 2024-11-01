@@ -1,10 +1,28 @@
 .producticon {
     width: 280px;
-    height: 300px;
+    height: 350px;
     background-color: white;
     margin: 20px;
+    display: flex;
+    align-items: center;
+   
+    flex-direction: column;
+    font-family: Inter;
 }
-
+.producticon h4{
+    margin-top: 10px;
+}
+.producticon button{
+    margin-top: 10px;
+    width: 80%;
+    height: 10%;
+}
+.imgproduct{
+    height: 230px;
+    width: 250px;
+    background-color: black;
+    margin-top: 10px;
+}
 .productcontainer {
     width: 100%;
     display: flex;
@@ -16,4 +34,25 @@
     width: 1300px;
     display: flex;
     flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 600px){
+    .producticon {
+        width: 120px;
+        height: 190px;
+        background-color: white;
+        margin: 10px;
+        font-size: 9px;
+    }
+    .imgproduct{
+        height: 90px;
+        width: 110px;
+        background-color: black;
+        margin-top: 10px;
+    }
+    .producticon button{
+        margin-top: 5px;
+        width: 100px;
+        height: 40px;
+    }
 }

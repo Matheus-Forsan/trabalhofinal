@@ -151,3 +151,115 @@ footer p{
     font-size: 7px;
     margin-bottom: 20px;
 }
+
+@media only screen and (max-width: 600px) {
+    .categorias{
+        width: 65px;
+        height: 65px;
+    
+    }
+    .categoriagrid{
+    
+        height: 100px;
+        
+    }
+    .catimg{
+        width:70%;
+    }
+    .losfavoritos {
+        margin-top: 10px;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        font-family: Inter;
+        color: #F5F5DC;
+    }
+    .populares{
+        width: 100px;
+    }
+    .about{
+        margin-top: 20px;
+
+    }
+    .aboutus{
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background-color: #180741;
+        display: flex;
+        flex-direction: column;
+        width: 370px;
+        height: auto;
+        border: solid #180741 4px ;
+        border-radius: 10px;
+    }
+    
+    .aboutus p{
+        font-size: 15px;
+        color: white;
+        font-family: Inter;
+    }
+    .foto{
+        width: 100px;
+        height: 100px;
+    }
+    .foto1{
+        width: 100px;
+    }
+    .OpnioesGrid{
+        margin-top: 60px;
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        margin-bottom: 60px;
+    }
+    .opniao{
+        gap: 16px;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        width:100px;
+        height:auto;
+        background-color: #F5F5DC;
+        border-radius: 10px;
+        padding: 10px;
+        font-family: Inter;
+        text-align: center;
+        border: #180741 solid 2px;
+        font-size: 11px;
+    }
+    
+    .footer1{
+        background-color: #180741;
+        width: 100%;
+        display: flex;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-evenly;
+        color: white;
+    }
+    .footercontent{
+        display: flex;
+        flex-direction: row;
+        gap:5px;
+        align-items: center;
+        font-size: 9px;
+        font-family: Inter;
+        margin-top: 30px;
+    }
+    footer{
+        background-color: #180741;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        font-size: 7px;
+        color:white;
+        gap:10px;
+    }
+    footer p{
+        font-family: Inter;
+        font-size: 7px;
+        margin-bottom: 20px;
+    }
+}

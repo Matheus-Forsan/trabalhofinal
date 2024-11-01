@@ -11,23 +11,23 @@ export default function Cabecalho() {
       <header className="headerbar">
         <div className="content">
         <div className="content1">
-          <IoMenu  size="35"/>
+          <IoMenu  className="menuicon"/>
           <p>MENU</p>
         </div>
-        <LiaCartPlusSolid size="55"/>
+        <LiaCartPlusSolid className="carticon"/>
         </div>
         <div>
         </div>
         <div className="search">
           <input placeholder="Buscar Produtos"></input>
-          <IoIosSearch size="30"/>
+          <IoIosSearch className="searchicon"/>
         </div>
         <div className="losfavoritos">
           <h1>
             FIT WEAR
           </h1>
         </div>
-        <FaUser size="30"/>
+        <FaUser className="usericon"/>
       </header>
     </div>
   );

@@ -1,0 +1,55 @@
+.cadastro{
+    width: 1000px;
+    height: 400px;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    
+}
+.cadastro button{
+    width: 300px;
+    height: 100px;
+}
+.cadastrogrid{
+    width: 1000px;
+    height: 400px;
+    display: flex;
+    justify-content: space-around;
+    gap: 200px;
+}
+.cadastrocontainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgcadastro{
+    background-color: black;
+    width: 200px;
+    height: 300px;
+}
+@media only screen and (max-width: 600px){
+    .cadastro{
+        width: 100%;
+        height: auto;
+        background-color: white;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20x''px;
+        align-items: center;
+        font-size: 11px;
+        
+    }
+    .cadastrogrid{
+        width: 300px;
+         height: auto;
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+    }
+}

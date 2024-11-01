@@ -58,6 +58,61 @@
 .fin2{
     display: flex;
     gap: 10px;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: baseline;
+}
+.botaocompra{
+    width: 400px;
+    height: 100px;
+    margin-bottom: 30px;
+    font-size: 22px;
+    font-family: Inter;
+    font-weight: bold;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+}
+.endbutton{
+    width: 236px;
+    height: 30px;
 }
 
+@media only screen and (max-width: 600px){
+    .carprod{
+        width: 400px;
+        height: 100px;
+        background-color: #77997E   ;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        font-family: Inter;
+        padding: 20px;
+        font-size: 11px;
+    }
+    .carimg{
+        width: 111px;
+        height: 89px;
+        background-color: black;
+    }
+    .carprod input{
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        font-size: larger;
+    }
+    .trashicon1{
+        font-size: 20px;
+    }
+    .finalizar {
+        background-color: aliceblue;
+        width: 400px;
+        margin-bottom: 30px;    
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-family: Inter;
+        font-size: 11px;
+        gap: 30px;
+    
+    }
+}

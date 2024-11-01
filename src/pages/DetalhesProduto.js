@@ -13,7 +13,7 @@ export default function DetalhesProduto() {
       
         <div className="produtogrid">
         <div className="imagemproduto">
-            <img src={leg} />
+            <img src={leg} className="imagemproduto"/>
         </div>
         <div className="produtoinfo">
           <h1>Calça legging - preta simples</h1>
