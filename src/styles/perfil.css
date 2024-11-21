@@ -1,0 +1,60 @@
+.perfil{
+    width: 100%;
+    background-color: black;
+    display: flex;
+    color: white;
+    font-family: Inter;
+    align-items: center;
+    justify-content: center;
+}
+
+.profileimg{
+    width: 264px;
+    height: 350px;
+    background-color: black;
+}
+.part1{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    width: 300px;
+    align-items: center;
+}
+.part1 button{
+    width: 250px;
+    height: 60px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+
+.perfilgrid{
+    width: 80%;
+    display: flex;
+    margin-top: 30px;
+    
+}
+
+.perfilcontainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.perfilinfo{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 500px;
+    font-family: Inter;
+    height: 500px;
+}
+.historico{
+    text-decoration: none;
+    color: blue;
+    font-family: Inter;
+}
+.historico:visited {
+    color: blue;
+}

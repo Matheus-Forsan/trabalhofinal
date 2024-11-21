@@ -17,6 +17,7 @@ export default function DetalhesProduto() {
         </div>
         <div className="produtoinfo">
           <h1>Calça legging - preta simples</h1>
+          <hr></hr>
           <div className="av">
           <h3>Avaliações: </h3><p>4,6</p>
           </div>

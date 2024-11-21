@@ -1,9 +1,10 @@
 .pedido {
     font-family: Inter;
-    background-color: #77997E;
+    background-color: white;
     width: 830px;
     height: auto;
     padding: 20px;
+    border: solid 2px;
 }
 
 .pd1 {

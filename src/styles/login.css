@@ -1,17 +1,48 @@
 .logincont {
     background-color: white;
-    height: auto;
-    width: 543px;
+    height: 376px;
+    width: 434px;
     padding: 20px;
     display: flex   ;
     flex-direction: column;
-    align-items: center;
+    font-family: Inter;
 
 }
-
+.loginbody{
+    background-color: black;
+    height: 100vh;
+}
+.naopossui{
+    font-size: smaller;
+}
+.logincont hr{
+    width: 220px;
+    border: none;
+    border-top: 2px solid;
+}
+ 
 .logincont input{
-    width: 100%;
-    
+    width: 368px;
+    height: 27px;
+    background-color: #D9D9D9;
+    border: none;
+    border-radius: 4px;
+
+}
+.botaologin{
+    width: 155px;
+    height: 69px;
+    background-color: #4D2059;
+    color: white;
+    border-radius: 20px;
+    border: solid 1px #4D2059;
+    transition: background-color 0.3s; 
+}
+.botaologin:hover {
+    background-color: white;
+    color: #4D2059;
+    border-color: #4D2059;
+    cursor: pointer;
 }
 .logback{
     display: flex;
@@ -26,16 +57,51 @@
     display: flex;
     flex-direction: column;
     gap: 14px;
+    justify-content: space-evenly;
+    height: 100%;
+    align-items: center;
 }
 
 @media only screen and (max-width: 600px){
     .logincont {
         background-color: white;
-        height: auto;
-        width: 300px;
-        padding: 20px;
-        display: flex   ;
-        flex-direction: column;
+        height: 425px;
+        width: 268px;
+    }
+    .logincont input{
+        width: 368px;
+        height: 27px;
+        background-color: #D9D9D9;
+        border: none;
+        border-radius: 4px;
+    
+    }
+    .logback{
+        display: flex;
+        width: 100%;
+        justify-content: center ;
         align-items: center;
+        height: 100%;
+    }
+    .logincont input{
+        width: 280px;
+        height: 27px;
+        background-color: #D9D9D9;
+        border: none;
+        border-radius: 20px;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-top: 20px;
+    
+    }
+    .botaologin{
+        width: 155px;
+        height: 69px;
+        background-color: #4D2059;
+        color: white;
+        border-radius: 20px;
+        border: solid 1px #4D2059;
+        transition: background-color 0.3s; 
     }
 }
+

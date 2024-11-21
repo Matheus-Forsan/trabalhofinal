@@ -10,10 +10,6 @@ export default function Cabecalho() {
     <div>
       <header className="headerbar">
         <div className="content">
-        <div className="content1">
-          <IoMenu  className="menuicon"/>
-          <p>MENU</p>
-        </div>
         <LiaCartPlusSolid className="carticon"/>
         </div>
         <div>

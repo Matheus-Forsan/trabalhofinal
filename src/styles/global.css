@@ -24,4 +24,6 @@
     box-shadow: none;
   }
 
-  
+  html{
+    height: 100vh;
+  }

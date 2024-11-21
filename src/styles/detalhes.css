@@ -9,7 +9,7 @@
 }
 
 .produtogrid {
-    background-color: #50645c;
+    background-color:white;
     padding:20px;
     display:flex;
     justify-content: space-evenly;
@@ -79,9 +79,7 @@
     color: white;
     cursor: pointer;
 }
-body{
-    background-color: #50645c;
-}
+
 
 @media only screen and (max-width: 600px){
     .imagemproduto{
@@ -94,7 +92,7 @@ body{
         box-shadow:  0px 10px 15px ;
     }
     .produtogrid {
-        background-color: #50645c;
+        background-color: whitec;
         padding:px;
         display:flex;
         align-items: center;

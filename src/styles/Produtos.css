@@ -5,7 +5,7 @@
     margin: 20px;
     display: flex;
     align-items: center;
-   
+   border: solid 1px;
     flex-direction: column;
     font-family: Inter;
 }
@@ -34,6 +34,7 @@
     width: 1300px;
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 50px;
 }
 
 @media only screen and (max-width: 600px){

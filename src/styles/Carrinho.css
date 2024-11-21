@@ -17,13 +17,14 @@
 .carprod{
     width: 1000px;
     height: 200px;
-    background-color: #77997E   ;
+    background-color: #4D2059  ;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
     font-family: Inter;
     padding: 20px;
+    color: white;
 }
 
 .carimg{
@@ -47,7 +48,7 @@
     display: flex;
     justify-content: space-evenly;
     font-family: Inter;
-
+    border: solid 2px ; 
 }
 
 .fin1{
@@ -69,7 +70,7 @@
     font-family: Inter;
     font-weight: bold;
     background-color: #D9D9D9;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 .endbutton{
     width: 236px;
@@ -80,7 +81,7 @@
     .carprod{
         width: 400px;
         height: 100px;
-        background-color: #77997E   ;
+        background-color: #4D2059   ;
         display: flex;
         flex-direction: row;
         align-items: center;
