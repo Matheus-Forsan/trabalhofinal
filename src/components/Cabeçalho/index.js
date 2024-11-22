@@ -20,7 +20,7 @@ export default function Cabecalho({}) {
       <header className="headerbar">
         <div className="content">
           {user?.role === "ADMIN" ? (
-            <Link to="/admin/cadastro">
+            <Link to="/admin/cadastro" className="tocarrinho">
               <p>Adicionar Produto</p>
               <FaPlus className="carticon2" />
             </Link>

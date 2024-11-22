@@ -13,14 +13,17 @@
         text-decoration: none;
         color: white;
         font-family: Inter;
-        
+        gap: 7px;
+        transition: 0.5s;
     }
     .carticon3{
         font-size: 40px;
     }
     .tocarriho p{
+        display: flex;
         font-size: 32px;
         font-weight: bold;
+        
     }
     .content{
         display: flex;
@@ -75,9 +78,8 @@
     }
     .carticon{
         font-size: 55px;
-        color: white;
-        transition: 0.5s;
-    }
+
+    }        
 
     
     .menuicon{
@@ -95,7 +97,7 @@
     .usericon:hover{
         color: #FFD700;
     }
-    .carticon:hover{
+    .tocarrinho:hover{
         color: #FFD700;
     }
     
@@ -130,14 +132,18 @@
             display: flex;
             background-color: black;
             height: 40px;
-            width: 110px;
+            width: 40px;
             border-radius: 10px;
             justify-content: start;
             align-items: center;
             overflow: hidden;
+            
         }
         .headerbar h1{
             font-size: 15px;
+        }
+        .tocarrinho p{
+            display: none;
         }
         .content{
             display: flex;
@@ -154,5 +160,8 @@
             flex: 1;
             flex-direction: column;
             align-items: center;
+        }
+        .headerbar{
+            justify-content: space-evenly;
         }
     }
