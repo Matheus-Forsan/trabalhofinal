@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Cabecalho from "../components/Cabeçalho";
 import legging from "../assets/images/legging.png";
 import academia1 from "../assets/images/academia 1.png";
@@ -12,40 +12,28 @@ import b2 from "../assets/images/branca2.png";
 import cvb from "../assets/images/cortaventobranco.png";
 import paula from "../assets/images/paula.ng.png"
 import lucas from "../assets/images/lucas.png"
+import logo2 from "../assets/images/logo2.png"
 
 import banner from "../assets/images/logo_nova.png"
 import Rodape from "../components/Footerdosite";
 
 import "../styles/home.css";
+import { AuthContext } from "../contexts/AuthContext";
 
 export default function Home() {
+  const { user } = useContext(AuthContext);
+
+
+    
+  
   return (
     <div className="maincontainer">
       <Cabecalho />
       <div className="banner">
-        <img src={banner} className="banner"/>
+        <img src={logo2} className="banner"/>
       </div>
       <main>
-          <div className="categoriagrid">
-            <div className="categorias">
-              <img src={legging}  className="catimg"/>
-            </div>
-            <div className="categorias">
-              <img src={camisa}  className="catimg"/>
-            </div>
-            <div className="categorias">
-              <img src={academia1}  className="catimg"/>
-            </div>
-            <div className="categorias">
-              <img src={short}  className="catimg"/>
-            </div>
-            <div className="categorias">
-              <img src={jaqueta}  className="catimg"/>
-            </div>
-            <div className="categorias">
-              <img src={dumbbell}  className="catimg"/>
-            </div>
-          </div>
+         
           <div className="losfavoritos">
             <h1>OS FAVORITOS</h1>
             <div className="favgrid">

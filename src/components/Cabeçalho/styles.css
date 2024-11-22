@@ -7,11 +7,26 @@
     align-items: center;
     
     }
+    .tocarrinho{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+        font-family: Inter;
+        
+    }
+    .carticon3{
+        font-size: 40px;
+    }
+    .tocarriho p{
+        font-size: 32px;
+        font-weight: bold;
+    }
     .content{
         display: flex;
         flex-direction: row;
         gap: 10px;
-        width: 150px;
+        width: 300px;
         justify-content: space-around;
     }
     .content1{
@@ -24,12 +39,14 @@
         align-items: center;
         color: white;
     }
-    
+    .legal{
+        text-decoration: none;
+    }
     .search{
         display: flex;
-        background-color: white;
+        background-color: black;
         height: 40px;
-        width: 600px;
+        width: 400px;
         border-radius: 10px;
         justify-content: start;
         align-items: center;
@@ -53,12 +70,16 @@
         margin-bottom: 20px;
     }
 
-
+    .headerbar h1{
+        margin-bottom: 10px ;
+    }
     .carticon{
         font-size: 55px;
         color: white;
-        transition: font-size 0.s;
+        transition: 0.5s;
     }
+
+    
     .menuicon{
         font-size: 35px;
     }
@@ -68,9 +89,28 @@
     .usericon{
         font-size: 30px;
         color: white;
+        transition: 0.5s;
     }
 
+    .usericon:hover{
+        color: #FFD700;
+    }
+    .carticon:hover{
+        color: #FFD700;
+    }
     
+    .legal:hover{
+        animation: skew-y-shake 1.3s;
+    }
+
+    @keyframes skew-y-shake {
+        0% { transform: translateX(0) }
+        25% { transform: translateX(5px) }
+        50% { transform: translateX(-5px) }
+        75% { transform: translateX(5px) }
+        100% { transform: translateX(0) }
+      }
+
     @media only screen and (max-width: 600px) {
        
         .carticon{
@@ -88,9 +128,9 @@
 
         .search{
             display: flex;
-            background-color: white;
+            background-color: black;
             height: 40px;
-            width: 200px;
+            width: 110px;
             border-radius: 10px;
             justify-content: start;
             align-items: center;

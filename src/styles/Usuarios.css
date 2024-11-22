@@ -38,6 +38,16 @@
     flex-direction: column;
 }
 
+.editgrid{
+    display: flex;
+    flex-direction: column ;
+    gap: 10px;
+
+}
+.editgrid input{
+    width: 100%;
+}
+
 @media only screen and (max-width: 600px){
     .manuser{
         width: 400px;

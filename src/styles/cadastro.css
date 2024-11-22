@@ -1,6 +1,6 @@
 .cadastro{
     width: 1000px;
-    height: 400px;
+    height: 500px;
     background-color: white;
     padding: 20px;
     display: flex;
@@ -10,6 +10,19 @@
     border: solid 1px;
     font-family: Inter;
     
+}
+
+.pd2 li{
+ margin-left: 20px;
+}
+body {
+    margin: 0;
+    padding: 0;
+  }
+
+.regback{
+    background-color: black;
+    height: 100vh;
 }
 .cadastro input{
     font-family: inter;
@@ -24,7 +37,7 @@
 
 .cadastrogrid{
     width: 1000px;
-    height: 400px;
+    height: 500px;
     display: flex;
     justify-content: space-around;
     gap: 200px;
@@ -37,10 +50,24 @@
     height: 100vh;
 }
 
+.paia3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
 .imgcadastro{
-    background-color: black;
-    width: 200px;
-    height: 300px;
+    background-color: rgb(255, 255, 255);
+    height: 230px;
+    width: 250px;
+    border: solid 1px black;
+    overflow: hidden; /* Esconde o excesso */
+    position: relative}
+.imgcadastro img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Preenche a altura ou largura da div */
+    object-position: center; /* Centraliza a parte visível da imagem */
 }
 @media only screen and (max-width: 600px){
     .cadastro{

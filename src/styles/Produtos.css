@@ -9,6 +9,7 @@
     flex-direction: column;
     font-family: Inter;
 }
+
 .producticon h4{
     margin-top: 10px;
 }
@@ -20,8 +21,18 @@
 .imgproduct{
     height: 230px;
     width: 250px;
-    background-color: black;
+    background-color: rgb(255, 255, 255);
     margin-top: 10px;
+    border: solid 1px black;
+    overflow: hidden; /* Esconde o excesso */
+    position: relative
+}
+.imgproduct img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Preenche a altura ou largura da div */
+    object-position: center; /* Centraliza a parte visível da imagem */
+    
 }
 .productcontainer {
     width: 100%;
