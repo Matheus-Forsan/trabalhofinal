@@ -16,7 +16,7 @@ export default function Registro() {
     logradouro: "",
     complemento: "",
     numero: "",
-    role: "USER"
+    role: "USER",
   });
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -34,7 +34,7 @@ export default function Registro() {
       await api.post("/auth/registro", formData);
       alert("Cadastro realizado com sucesso!");
       // Navegar para a página de login ou alguma outra página após o cadastro
-      navigate("/x'");
+      navigate("/");
     } catch (error) {
       if (
         error.response &&
@@ -173,7 +173,6 @@ export default function Registro() {
               placeholder="Crie uma senha"
             />
           </div>
-
 
           {/* Exibição de erros */}
           {error && <p className="error-message">{error}</p>}

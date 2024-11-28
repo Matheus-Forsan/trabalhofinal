@@ -143,13 +143,12 @@ export default function Carrinho() {
 
     // Se ambos são números válidos, podemos adicionar ao total
     if (!isNaN(preco) && !isNaN(quantidade)) {
-      return acc + (preco * quantidade);
+      return acc + preco * quantidade;
     }
     return acc; // Se algum valor for inválido, não adiciona nada
   }, 0);
 
-  console.log('carinho',carrinho);
-  
+  console.log("carinho", carrinho);
 
   return (
     <div>
@@ -163,10 +162,11 @@ export default function Carrinho() {
                 nomeproduto={item.produto.nome}
                 fotoproduto={item.produto.imagens[0]}
                 qntdproduto={item.quantidade}
-                namudança={(e) => handleQuantidadeChange(item.produtoId, e.target.value)}
-                apagar={() => handleDeletarItem(item.produtoId)}  // Passando a função de deletar para o CartItem
+                namudança={(e) =>
+                  handleQuantidadeChange(item.produtoId, e.target.value)
+                }
+                apagar={() => handleDeletarItem(item.produtoId)} // Passando a função de deletar para o CartItem
               />
-              
             </div>
           ))}
         </div>
@@ -186,9 +186,6 @@ export default function Carrinho() {
                 </select>
               </h2>
             </div>
-            
-           
-           
           </div>
           <div>
             <h1>Total: R$ {total.toFixed(2)}</h1>

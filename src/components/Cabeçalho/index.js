@@ -1,7 +1,5 @@
 import React, { useContext } from "react";
-import { MdAddShoppingCart } from "react-icons/md"; // Ícone para admin
 import { LiaCartPlusSolid } from "react-icons/lia";
-import { IoIosSearch } from "react-icons/io";
 import { FaUser } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -37,7 +35,7 @@ export default function Cabecalho({}) {
         </div>
         <div className="search"></div>
         <div className="losfavoritos">
-          <Link  className="legal">
+          <Link className="legal" to="/">
             <h1>FIT WEAR</h1>
           </Link>
         </div>

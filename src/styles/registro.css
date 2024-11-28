@@ -52,16 +52,16 @@
 .botaologin{
     width: 155px;
     height: 69px;
-    background-color: #4D2059;
+    background-color: #FFD700;
     color: white;
     border-radius: 20px;
-    border: solid 1px #4D2059;
+    border: solid 1px #FFD700;
     transition: background-color 0.3s; 
 }
 .botaologin:hover {
     background-color: white;
-    color: #4D2059;
-    border-color: #4D2059;
+    color: #FFD700;
+    border-color: #FFD700;
     cursor: pointer;
 }
 .regback{

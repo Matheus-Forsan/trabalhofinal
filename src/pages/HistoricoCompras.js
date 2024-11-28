@@ -21,7 +21,11 @@ export default function HistoricoCompras() {
         const responsePedidos = await api.get("/pedidos"); // Supondo que você tenha a rota "/pedidos" configurada
         setPedidos(responsePedidos.data); // Armazena os pedidos na variável de estado
       } catch (error) {
-        if (error.response && error.response.data && error.response.data.message) {
+        if (
+          error.response &&
+          error.response.data &&
+          error.response.data.message
+        ) {
           setError(error.response.data.message); // Exibe a mensagem de erro da API
         } else {
           setError("Erro desconhecido. Por favor, tente novamente."); // Exibe uma mensagem genérica
@@ -37,13 +41,16 @@ export default function HistoricoCompras() {
     return <p>Carregando pedidos...</p>;
   }
 
+  console.log("pedidos", pedidos);
+
   return (
     <div>
       <Cabecalho />
       <main>
         <div className="hist">
           <h1>Histórico de compras</h1>
-          {error && <p className="error">{error}</p>} {/* Exibe o erro caso haja algum */}
+          {error && <p className="error">{error}</p>}{" "}
+          {/* Exibe o erro caso haja algum */}
           <div className="histgrid">
             {pedidos.length > 0 ? (
               pedidos.map((pedido) => (
@@ -51,8 +58,10 @@ export default function HistoricoCompras() {
                   <div className="pedido">
                     <div className="pd1">
                       <h3>
-                        Pedido: #{pedido.id} - {new Date(pedido.data).toLocaleString()} <br />
-                        Usuario: {user?.nome} (ID: {user?.id}) {/* Exibe o nome e ID do usuário */}
+                        Pedido: #{pedido.id} -{" "}
+                        {new Date(pedido.data).toLocaleString()} <br />
+                        Usuario: {user?.nome} (ID: {user?.id}){" "}
+                        {/* Exibe o nome e ID do usuário */}
                       </h3>
                     </div>
                     <hr className="l1" />
@@ -81,7 +90,8 @@ export default function HistoricoCompras() {
                     <hr className="l1" />
                     <div className="pd2">
                       <h3>Valor Total:</h3>
-                      <p>R$ {pedido.total.toFixed(2)}</p> {/* Formata o valor para exibição */}
+                      <p>R$ {pedido.total.toFixed(2)}</p>{" "}
+                      {/* Formata o valor para exibição */}
                     </div>
                   </div>
                 </div>

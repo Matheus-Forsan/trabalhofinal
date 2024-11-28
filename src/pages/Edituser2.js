@@ -5,7 +5,7 @@ import { AuthContext } from "../contexts/AuthContext";
 
 export default function EditUser2() {
   const { id } = useParams(); // Obtém o ID do usuário pela URL
-  const { user } = useContext(AuthContext); // Usuário logado e token do contexto
+  const { user } = useContext(AuthContext); // Usuário logado
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [telefone, setTelefone] = useState("");
@@ -17,23 +17,18 @@ export default function EditUser2() {
   const [successMessage, setSuccessMessage] = useState("");
   const navigate = useNavigate();
 
-  // Carregar informações do usuário
+  // Carregar informações do usuário a partir do ID
   useEffect(() => {
-    if (!user || !user.token) {
-      setError("Token de autenticação ausente. Faça login novamente.");
-      return;
-    }
-
     const fetchUsuario = async () => {
       try {
         const response = await api.get(`/users/${id}`);
         const usuarioData = response.data;
 
-        setNome(usuarioData?.nome || "");
-        setEmail(usuarioData?.email || "");
-        setTelefone(usuarioData?.telefone || "");
-        setCpf(usuarioData?.cpf || "");
-        setRole(usuarioData?.role || "USER");
+        setNome(usuarioData.nome || "");
+        setEmail(usuarioData.email || "");
+        setTelefone(usuarioData.telefone || "");
+        setCpf(usuarioData.cpf || "");
+        setRole(usuarioData.role || "USER");
         setLoading(false);
       } catch (err) {
         setError("Erro ao carregar os dados do usuário.");
@@ -42,7 +37,7 @@ export default function EditUser2() {
     };
 
     fetchUsuario();
-  }, [id, user]);
+  }, [id]);
 
   // Atualizar usuário
   const handleEditUsuario = async (e) => {
@@ -50,18 +45,21 @@ export default function EditUser2() {
     setError("");
     setSuccessMessage("");
 
-    const updatedUserData = { nome, email, telefone, cpf, role };
-
-    if (password) {
-      updatedUserData.password = password;
-    }
+    const updatedUserData = {
+      nome,
+      email,
+      telefone,
+      cpf,
+      role,
+      ...(password && { password }), // Inclui a senha apenas se foi preenchida
+    };
 
     try {
       await api.put(`/users/${id}`, updatedUserData);
       setSuccessMessage("Usuário atualizado com sucesso!");
       navigate("/admin/usuarios");
     } catch (err) {
-      setError("Erro ao atualizar o usuário. Tente novamente.");
+      setError(err.response?.data?.message || "Erro ao atualizar o usuário. Tente novamente.");
     }
   };
 
@@ -73,7 +71,7 @@ export default function EditUser2() {
         await api.delete(`/users/${id}`);
         navigate("/admin/usuarios");
       } catch (err) {
-        setError("Erro ao excluir usuário. Tente novamente.");
+        setError(err.response?.data?.message || "Erro ao excluir usuário. Tente novamente.");
       }
     }
   };
@@ -92,7 +90,7 @@ export default function EditUser2() {
               Nome:
               <input
                 name="nome"
-                value={user.nome}
+                value={nome}
                 onChange={(e) => setNome(e.target.value)}
               />
             </label>
@@ -100,7 +98,7 @@ export default function EditUser2() {
               Email:
               <input
                 name="email"
-                value={user.email}
+                value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
             </label>
@@ -108,7 +106,7 @@ export default function EditUser2() {
               Contato:
               <input
                 name="telefone"
-                value={user.telefone}
+                value={telefone}
                 onChange={(e) => setTelefone(e.target.value)}
               />
             </label>
@@ -116,7 +114,7 @@ export default function EditUser2() {
               CPF:
               <input
                 name="cpf"
-                value={user.cpf}
+                value={cpf}
                 onChange={(e) => setCpf(e.target.value)}
               />
             </label>
@@ -125,7 +123,8 @@ export default function EditUser2() {
               <input
                 name="password"
                 type="password"
-                value={user.password}
+                placeholder="Deixe vazio para manter a senha atual"
+                value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
             </label>
@@ -133,7 +132,7 @@ export default function EditUser2() {
               Papel:
               <select
                 name="role"
-                value={user.role}
+                value={role}
                 onChange={(e) => setRole(e.target.value)}
               >
                 <option value="USER">Usuário</option>

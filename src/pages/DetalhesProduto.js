@@ -32,26 +32,32 @@ export default function DetalhesProduto() {
     fetchProduto();
   }, [id]);
 
-  const handleAddToCart = async () => {
-    if (!user) {
-      alert("Você precisa estar logado para adicionar ao carrinho.");
-      return navigate("/login");
-    }
-
-    try {
-      await api.post("/carrinho", {
-        userId: user.id,
-        produtoId: produto.id,
-        quantidade: 1, // Aqui você pode usar uma variável caso o usuário escolha a quantidade
-      });
-      alert("Produto adicionado ao carrinho com sucesso!");
-      navigate("/carrinho");
-    } catch (error) {
-      if (error.response?.data?.message) {
-        setError(error.response.data.message);
-      } else {
-        setError("Erro ao adicionar ao carrinho. Tente novamente.");
+  const handleAddToCartOrEdit = () => {
+    if (user?.role === "ADMIN") {
+      // Redireciona para a página de edição se o usuário for administrador
+      navigate(`/admin/produtos/${id}`);
+    } else {
+      // Lógica para adicionar ao carrinho para usuários normais
+      if (!user) {
+        alert("Você precisa estar logado para adicionar ao carrinho.");
+        return navigate("/login");
       }
+
+      api
+        .post("/carrinho", {
+          userId: user.id,
+          produtoId: produto.id,
+          quantidade: 1, // Aqui você pode usar uma variável caso o usuário escolha a quantidade
+        })
+        .then(() => {
+          alert("Produto adicionado ao carrinho com sucesso!");
+          navigate("/carrinho");
+        })
+        .catch((error) => {
+          setError(
+            error.response?.data?.message || "Erro ao adicionar ao carrinho. Tente novamente."
+          );
+        });
     }
   };
 
@@ -90,9 +96,6 @@ export default function DetalhesProduto() {
             <h3>Em estoque: {produto.estoque}</h3>
           </div>
           <div className="size">
-            
-          </div>
-          <div className="size">
             <h2>Quantidade:</h2>
             <select>
               {Array.from({ length: produto.estoque }, (_, i) => i + 1).map((qtd) => (
@@ -101,8 +104,9 @@ export default function DetalhesProduto() {
             </select>
           </div>
           <div className="bd">
-            <button className="addtocart" onClick={handleAddToCart}>
-              <h2>Adicionar ao carrinho</h2>
+            {/* Botão que alterna entre editar e adicionar ao carrinho */}
+            <button className="addtocart" onClick={handleAddToCartOrEdit}>
+              <h2>{user?.role === "ADMIN" ? "Editar Produto" : "Adicionar ao carrinho"}</h2>
             </button>
           </div>
         </div>

@@ -2,17 +2,17 @@ import React, { useState, useEffect, useContext } from "react";
 import "../styles/cadastro.css";
 import { useParams, useNavigate } from "react-router-dom";
 import api from "../services/api";
-import { AuthContext } from "../contexts/AuthContext"; // Certifique-se de importar o contexto
+import { AuthContext } from "../contexts/AuthContext";
 
 export default function EditarProduto() {
   const { id } = useParams();
-  const { user } = useContext(AuthContext); // Acessando o contexto de autenticação
+  const { user } = useContext(AuthContext);
   const [nome, setNome] = useState("");
   const [preco, setPreco] = useState("");
   const [estoque, setEstoque] = useState("");
   const [descricao, setDescricao] = useState("");
   const [imagens, setImagens] = useState([]);
-  const [imagePreview, setImagePreview] = useState(null); // Para pré-visualizar a imagem
+  const [imagePreview, setImagePreview] = useState(null);
   const [visibilidade, setVisibilidade] = useState(true);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -36,24 +36,17 @@ export default function EditarProduto() {
         setEstoque(produtoData.estoque);
         setDescricao(produtoData.descricao);
         setVisibilidade(produtoData.visibilidade);
-        setLoading(false);
-        
+
         if (produtoData.imagens && produtoData.imagens.length > 0) {
-          setImagePreview(produtoData.imagens[0]); // Aqui você deve substituir pela URL da imagem
+          setImagePreview(produtoData.imagens[0]);
         }
 
         setLoading(false);
       } catch (error) {
-        if(
-            error.response &&
-          error.response.data &&
-          error.response.data.message
-        ) {
-            setError(error.response.data.message);
-          } else {
-            setError("Erro desconhecido. Por favor, tente novamente.");
-          }
-          setLoading(false);
+        const errorMessage =
+          error.response?.data?.message || "Erro ao carregar o produto.";
+        setError(errorMessage);
+        setLoading(false);
       }
     };
 
@@ -63,39 +56,34 @@ export default function EditarProduto() {
   // Função para editar produto
   const handleEditProduto = async (e) => {
     e.preventDefault();
-
-    const formData = new FormData();
-    formData.append("nome", nome);
-    formData.append("preco", Number(preco));
-    formData.append("estoque", Number(estoque));
-    formData.append("descricao", descricao);
-    formData.append("visibilidade", visibilidade ? "true" : "false");
-
-    Array.from(imagens).forEach((imagem) => {
-      formData.append("imagens", imagem);
-    });
-
+  
+    // Cria o objeto para envio
+    const produtoData = {
+      nome,
+      preco: parseFloat(preco),
+      estoque: parseInt(estoque, 10),
+      descricao,
+      visibilidade: visibilidade ? "true" : "false",
+      imagens: Array.from(imagens).map((imagem) => URL.createObjectURL(imagem)), // Adiciona URLs temporários
+    };
+  
     try {
-      await api.put(`/produtos`, formData, {
+      await api.put(`/produtos/${id}`, produtoData, {
         headers: {
-          "Content-Type": "multipart/form-data",
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${user.token}`,
         },
       });
-
+  
       setSuccessMessage("Produto atualizado com sucesso!");
       navigate("/");
     } catch (error) {
-      if (
-        error.response &&
-        error.response.data &&
-        error.response.data.message
-      ) {
-        setError(error.response.data.message);
-      } else {
-        setError("Erro desconhecido. Por favor, tente novamente.");
-      }
+      const errorMessage =
+        error.response?.data?.message || "Erro ao atualizar o produto.";
+      setError(errorMessage);
     }
   };
+  
 
   // Função para excluir produto
   const handleDeleteProduto = async () => {
@@ -105,32 +93,53 @@ export default function EditarProduto() {
     if (!confirmDelete) return;
 
     try {
-      await api.delete(`/produtos/${id}`);
+      await api.delete(`/produtos/${id}`, {
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      });
+
       alert("Produto excluído com sucesso!");
       navigate("/");
     } catch (error) {
-      if (
-        error.response &&
-        error.response.data &&
-        error.response.data.message
-      ) {
-        alert(`Erro ao excluir o produto: ${error.response.data.message}`);
-      } else {
-        alert(
-          "Erro desconhecido ao excluir o produto. Por favor, tente novamente."
-        );
-      }
+      const backendMessage =
+        error.response?.data?.message || "Erro desconhecido.";
+      alert(`Erro ao excluir o produto: ${backendMessage}`);
     }
   };
 
-  
+  // Função para desativar produto
+  const handleDeactivateProduto = async () => {
+    const confirmDeactivate = window.confirm(
+      "Tem certeza que deseja desativar este produto? Ele não será mais exibido para vendas."
+    );
+    if (!confirmDeactivate) return;
+
+    try {
+      await api.put(
+        `/produtos/${id}`,
+        { visibilidade: false },
+        {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
+
+      alert("Produto desativado com sucesso!");
+      navigate("/");
+    } catch (error) {
+      const backendMessage =
+        error.response?.data?.message || "Erro desconhecido.";
+      alert(`Erro ao desativar o produto: ${backendMessage}`);
+    }
+  };
 
   // Função para lidar com a mudança da imagem
   const handleImageChange = (e) => {
     const files = e.target.files;
     setImagens(files);
 
-    // Exibindo a pré-visualização da primeira imagem selecionada
     if (files.length > 0) {
       const reader = new FileReader();
       reader.onloadend = () => {
@@ -190,7 +199,6 @@ export default function EditarProduto() {
             </div>
             <div className="paia3">
               <div className="imgcadastro">
-                {/* Se imagePreview existir, exibe a imagem */}
                 {imagePreview && (
                   <img
                     src={imagePreview}
@@ -209,6 +217,7 @@ export default function EditarProduto() {
           <button type="button" onClick={handleDeleteProduto}>
             Excluir Produto
           </button>
+        
         </div>
       </form>
     </div>
